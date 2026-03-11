@@ -1,21 +1,11 @@
 package funciones;
 
-import java.util.Scanner;
 
 public class Principal {
 
 	public static void main(String[] args) {
-		String nombre = pedirNombre();
-		System.out.println("Hola " + nombre);
-
+		//String nombre = Funciones.pedirNombre();
+		//System.out.println("Hola " + nombre);
+		//Funciones.imprimirFecha(1, 10, 2027);
 	}
-	
-	public static String pedirNombre() {
-		Scanner lector = new Scanner(System.in);
-		System.out.println("Ingrese su nombre: ");
-		String nombreUsuario = lector.nextLine();
-		return nombreUsuario;
-	}
-	
-
 }
