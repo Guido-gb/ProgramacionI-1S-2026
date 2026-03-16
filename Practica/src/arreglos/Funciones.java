@@ -69,4 +69,18 @@ public class Funciones {
 		}
 		return max;
 	}
+	
+	/*
+	 * Implementar una función public static int[] reverso(int[] a),
+	 * que dado un array de enteros devuelva un nuevo array con los elementos en orden inverso.
+	 */
+	
+	public static int[] reverso(int[] a) {
+		int[] b = new int[a.length];
+		for(int y=0;y<b.length;y++) {
+			b[y] = a[a.length-1-y];
+		}
+		return b;
+	}
+	
 }

@@ -29,7 +29,10 @@ public class Principal {
 		System.out.println("El promedio es " + Funciones.promedio(a));
 		*/
 		int[] b = {1,567,123,07,212,4,7,123,567,243,56,24};
+		//Funciones.imprimir(b);
+		//System.out.println("El maximo es " + Funciones.max(b));
+		int[] a = Funciones.reverso(b);
+		Funciones.imprimir(a);
 		Funciones.imprimir(b);
-		System.out.println("El maximo es " + Funciones.max(b));
 	}
 }
