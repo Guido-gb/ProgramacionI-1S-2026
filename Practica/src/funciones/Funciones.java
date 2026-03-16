@@ -7,6 +7,7 @@ public class Funciones {
 		Scanner lector = new Scanner(System.in);
 		System.out.println("Ingrese su nombre: ");
 		String nombreUsuario = lector.nextLine();
+		lector.close();
 		return nombreUsuario;
 	}
 	

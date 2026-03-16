@@ -23,6 +23,7 @@ public class Principal {
 		for(int x=0; x<palabra.length();x++) {
 			System.out.println(palabra.charAt(x));
 		}
+		lector.close();
 	}
 
 }
