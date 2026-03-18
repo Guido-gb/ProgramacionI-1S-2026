@@ -82,4 +82,17 @@ public class Funciones {
 			return;
 		}
 	}	
+	public static void imprimirFecha2(int dia, int mes, int anio) {
+		String[] meses = {"","enero","febrero","marzo","abril","mayo","junio"};
+		System.out.println(dia + " de " + meses[mes] + " de " + anio);
+	}
+	
+	public static int cantidadCifras(int valor) {
+		int cont=0;
+		while(valor>0) {
+			valor = valor/10;
+			cont++;
+		}
+		return cont;
+	}
 }

@@ -28,11 +28,24 @@ public class Principal {
 		Funciones.imprimir(a);
 		System.out.println("El promedio es " + Funciones.promedio(a));
 		*/
-		int[] b = {1,567,123,07,212,4,7,123,567,243,56,24};
+		int[] b = {2,4,6,12,24,23,24,24,4,7,1,24,4,24,24,24,4,4,23,56,9};
 		//Funciones.imprimir(b);
 		//System.out.println("El maximo es " + Funciones.max(b));
-		int[] a = Funciones.reverso(b);
-		Funciones.imprimir(a);
+		//int[] a = Funciones.reverso(b);
 		Funciones.imprimir(b);
+		/*
+		System.out.println(Funciones.cantidadDeRepetidos(b));
+		int[] nuevo = Funciones.sinRepetidos(b);
+		Funciones.imprimir(nuevo);
+		
+		System.out.println(Funciones.cantidadDeRepetidos2(b));
+		System.out.println(Funciones.cantidadDeRepetidos(b));
+		int[] nuevo = Funciones.sinRepetidos2(b);
+		Funciones.imprimir(nuevo);
+		*/
+		int indice = Funciones.maximoIndice(b);
+		System.out.println("Tamaño " + b.length);
+		System.out.println("Indice Maximo " + indice);
+		System.out.println("Elmento con indice maximo " + b[indice]);
 	}
 }

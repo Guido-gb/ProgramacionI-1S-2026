@@ -27,6 +27,7 @@ public class Funciones {
 	public static int pedirEntero() {
 		Scanner lector = new Scanner(System.in);
 		System.out.println("Ingrese un entero");
+		lector.close();
 		return lector.nextInt();
 	}
 	/*
@@ -81,6 +82,164 @@ public class Funciones {
 			b[y] = a[a.length-1-y];
 		}
 		return b;
+	}
+	
+	/*
+	 * public static int[] agregarAtras(int[] a, int item)
+	 * Devuelve un array que tiene los mismos elementos que el array recibido, 
+	 * con el nuevo elemento item agregado al final.
+	 */
+	
+	public static int[] agregarAtras(int[] a, int item) {
+		int[] nuevo = new int[a.length + 1];
+		for(int x = 0;x<a.length;x++) {
+			nuevo[x] = a[x];
+		}
+		nuevo[a.length] = item;
+		//nuevo[nuevo.length - 1] = item;
+		return nuevo;
+	}
+	
+	/*
+	 * public static int[] quitar(int[] a, int i)
+	 * Devuelve un array que tiene los mismos elementos que el array
+	 * recibido, excepto el elemento que estaba en la posición i.
+	 */
+	
+	public static int[] quitar(int[] a, int i) {
+		int[] nuevo = new int[a.length-1];
+		int z =0;
+		for(int y =0; y<a.length;y++) {
+			if(y != i-1) {
+				nuevo[z] = a[y];
+				z++;
+			}
+		}
+		return nuevo;
+	}
+	
+	/*
+	 * public static int[] opuestos(int[] a)
+	 * Devuelve un array con los elementos opuestos, e.g: si el valor es 2 devuelve -2.
+	 */
+	
+	public static int[] opuestos(int[] a) {
+		int[] nuevo = new int[a.length];
+		for(int x=0;x<nuevo.length;x++) {
+			nuevo[x] = - a[x];
+		}
+		return nuevo;
+	}
+	
+	/*
+	 * public static boolean sonTodosDivisoresDe(int[] a, int n)
+	 * Devuelve true si todos los elementos del array recibido son divisores de n.
+	 */
+	
+	public static boolean sonTodosDivisoresDe(int[] a, int n) {
+		for(int x=0; x<a.length;x++) {
+			if( n % a[x] != 0 ){
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	/*
+	 * Implementar la función public static int cantidadDeRepetidos(int[] a) que dado un array,
+	 * devuelve la cantidad de elementos repetidos.
+	 */
+	
+	public static int cantidadDeRepetidos(int[] a) {
+		int cont=0;
+		for(int y=0;y<a.length;y++) {
+			if(cantRepeticion(a, a[y]) > 1) {
+				cont++;
+			}
+		}
+		return cont;
+	}
+	
+	public static int cantidadDeRepetidos2(int[] a) {
+		int cont=0;
+		for(int y=0;y<a.length;y++) {
+			if(contarApartir(a, a[y], y+1) == 1) {
+				cont++;
+			}
+		}
+		return cont;
+	}
+	
+	// cantidad de veces que b esta en el arreglo a
+	public static int cantRepeticion(int[] a, int b) {
+		int cont=0;
+		for(int x=0;x<a.length;x++) {
+			if(a[x]==b) {
+				cont++;
+			}
+		}
+		
+		return cont;
+	}
+	
+	/*
+	 * Implementar la función public static int[] sinRepetidos(int[] a) que dado un array, 
+	 * devuelve un nuevo array sin los elementos repetidos. Utilizar la función cantidadDeRepetidos()
+	 * para saber la cantidad de elementos del nuevo array.
+	 */
+	
+	public static int[] sinRepetidos(int[] a) {
+		int[] nuevo = new int[a.length-cantidadDeRepetidos(a)];
+		int z=0;
+		for(int x=0;x<a.length;x++) {
+			if(cantRepeticion(a, a[x]) == 1) {
+				nuevo[z] = a[x];
+				z++;
+			}
+		}
+		return nuevo;
+	}
+	
+	public static int[] sinRepetidos2(int[] a) {
+		int[] nuevo = new int[a.length-cantidadDeRepetidos(a)+cantidadDeRepetidos2(a)];
+		int z=0;
+		for(int x=0;x<a.length;x++) {
+			if(contarApartir(a, a[x], x) == 1) {
+				nuevo[z] = a[x];
+				z++;
+			}
+		}
+		return nuevo;
+	}
+	
+	
+	public static int contarApartir(int[] a, int item, int pos) {
+		if(pos>= a.length) {
+			return 0;
+		}
+		int cont=0;
+		for(int x=pos;x<a.length;x++) {
+			if(a[x] == item) {
+				cont++;
+			}
+		}
+		return cont;
+	}
+	
+	/*
+	 * Ejercicio 26
+	 * Escribir un metodo static int maximoIndice(int[] a) que dado un arreglo de enteros no vacıo,
+	 * devuelve el ındice del valor mas alto que aparece.
+	 */
+	
+	public static int maximoIndice(int[] a) {
+		int indiceMax = 0;
+		for(int x=0; x<a.length;x++) {
+			if(a[x] > a[indiceMax]) {
+				indiceMax = x;
+			}
+		}
+		return indiceMax;
 	}
 	
 }
